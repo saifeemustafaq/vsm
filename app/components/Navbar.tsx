@@ -27,13 +27,12 @@ export default function Navbar() {
           id: item.id,
           distance: Math.abs(rect.top)
         }
-      }).filter(Boolean)
+      }).filter((section): section is { id: string; distance: number } => section !== null)
 
-      const closest = sections.reduce((prev, curr) => 
-        prev.distance < curr.distance ? prev : curr
-      )
-
-      if (closest) {
+      if (sections.length > 0) {
+        const closest = sections.reduce((prev, curr) => 
+          prev.distance < curr.distance ? prev : curr
+        )
         setActiveSection(closest.id)
       }
     }
