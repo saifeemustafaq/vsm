@@ -140,8 +140,10 @@ export default function VSMTimeline() {
 
                 {/* Bottleneck Indicator */}
                 {step.isBottleneck && (
-                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
-                    Bottleneck
+                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-red-100 text-red-700 px-4 py-1 rounded-full text-sm font-medium border border-red-300 shadow-sm">
+                      Bottleneck
+                    </div>
                   </div>
                 )}
               </motion.div>
